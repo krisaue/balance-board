@@ -64,7 +64,9 @@ target_set_warnings(${LIBRARY_NAME} ENABLE ALL AS_ERROR ALL DISABLE Annoying)
 
 # Add an executable for the file app/main.cpp.
 # If you add more executables, copy these lines accordingly.
-add_executable(main app/main.cpp)   # Name of exec. and location of file.
+add_executable(main app/main.cpp
+    src/pid_controller.cpp
+)   # Name of exec. and location of file.
 target_link_libraries(main PRIVATE ${LIBRARY_NAME} ${OpenCV_LIBS})  # Link the executable to library (if it uses it).
 target_set_warnings(main ENABLE ALL AS_ERROR ALL DISABLE Annoying) # Set warnings (if needed).
 target_enable_lto(main optimized)  # enable link-time-optimization if available for non-debug configurations

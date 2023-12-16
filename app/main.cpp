@@ -1,9 +1,11 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 
-using namespace cv;
-using namespace std;
+#include <pid_controller.h>
 
+using namespace cv;
+
+/*
 cv::Mat ball_detector(cv::Mat src){
 
     Mat gray_img;
@@ -22,6 +24,16 @@ cv::Mat ball_detector(cv::Mat src){
     }
     return src;
 }
+*/
+
+int main()
+{
+    pid_controller minPID(1.0,2.4,3.1,20.5);
+    std::cout<<std::setprecision(3);
+    std::cout<<minPID.get_params()<<"\n";
+    return 0;
+}
+/*
 
 int main()
 {
@@ -77,3 +89,4 @@ int main()
  return 0;
 
 }
+*/
